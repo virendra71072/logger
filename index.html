@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+
+<div id="div1"><h2>Logger</h2></div>
+
+<button onclick="reload();">Reload</button>
+<div id="log" style="
+    width: 700px;
+    border: black;
+    background: black;
+    font-size: 16px;
+    color: aliceblue;
+    max-height: 400px;
+    overflow-y: auto;
+    min-height: 400px;
+">
+	
+</div>
+
+
+<script>
+	$(document).ready(function(){
+	  reload();
+});
+
+	  function reload() {
+	  	 $.ajax({url: "http://localhost:8080/api/v1/log/list", success: function(result){
+	  	 	console.log(result);
+	  	 	if (result.status == true) {
+	  	 		let txt = result.response.replace(/\n/g, "<br/>");
+			 	$("#log").append(txt);
+			 	$('#log').scrollTop($('#log')[0].scrollHeight);
+			}
+	    }});
+	  }
+
+</script>
+
+</body>
+</html>

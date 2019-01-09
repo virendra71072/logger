@@ -1,0 +1,12 @@
+{
+    "server": {
+        "index": {
+            "port": 8080
+        }
+    },
+    "logging": {
+        "label"         : "Assignment",
+        "consoleLevel"  : "debug",
+        "fileLevel"     : "debug"
+    }    
+}
