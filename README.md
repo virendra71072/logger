@@ -16,7 +16,7 @@ npm start;
 
 ### API LIST
 1. http://localhost:8080/api/v1/log/create
-	Description: API to add new Log into day wise dynamic file in folder "asset/clientLog/development-YYYY_MM_DD.log" or we can replace custom file into this path of this format
+	Description: API to add new Log file in folder "asset/clientLog/logger.txt" or we can replace custom file into this path of this format
 
 	method : POST
 	body: {
